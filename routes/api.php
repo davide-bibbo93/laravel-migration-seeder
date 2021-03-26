@@ -18,4 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('first-auto', 'Api\ApiController@getFirstAuto');
+Route::get('auto', 'Api\ApiController@getAllAuto');
+
+Route::get('auto/first-auto', 'Api\ApiController@getFirstAuto');

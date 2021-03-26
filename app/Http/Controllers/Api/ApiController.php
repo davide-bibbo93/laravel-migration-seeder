@@ -8,6 +8,14 @@ use App\Auto;
 
 class ApiController extends Controller
 {
+    public function getAllAuto() {
+        // creare un'api che ritorna tutto il database.
+        $auto = Auto::all();
+
+        // dobbiamo trasformare un oggetto Model in json con la serialization
+        return response()->json($auto);
+    }
+
     public function getFirstAuto() {
         // creare un'api che ritorna la prima auto nel database.
         $firstAuto = Auto::orderBy('id', 'asc')->first();
